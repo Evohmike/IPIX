@@ -1,0 +1,39 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+    <title>{{title}} | IPIX</title>
+    {% else %}
+    <title>IPIX</title>
+    {% endif %}
+
+    {% block styles %}
+       
+    {% endblock %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container search-section">
+        <div class="row">
+            <div class="col-md-12 search-form">
+                <form class="form-inline" role="search" action="{% url 'search_images' %}">
+                    <input class="form-control search-input" name="category" type="search" placeholder="Search categories" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+        
+    {% endblock %}    
+</body>
+</html>
