@@ -1,5 +1,6 @@
-{% load bootstrap4 %}
 
+{% load bootstrap3 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,12 @@
     {% endif %}
 
     {% block styles %}
-       
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Cambay' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     {% endblock %}
 </head>
 <body>
@@ -21,7 +27,7 @@
     <div class="container search-section">
         <div class="row">
             <div class="col-md-12 search-form">
-                <form class="form-inline" role="search" action="{% url 'search_images' %}">
+                <form class="form-inline" role="search" action="">
                     <input class="form-control search-input" name="category" type="search" placeholder="Search categories" aria-label="Search">
                 </form>
             </div>
@@ -33,7 +39,10 @@
     {% endblock %}
 
     {% block scripts %}
-        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        {% bootstrap_javascript %}
+        <script src="{% static 'js/script.js' %}"></script>
     {% endblock %}    
 </body>
 </html>
+
