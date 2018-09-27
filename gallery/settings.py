@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ipix.apps.IpixConfig',
-    'bootstrap4',
+    'bootstrap3',
 
 ]
 
