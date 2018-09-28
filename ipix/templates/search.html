@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid">
+    <div class="row">
+        {% for img in images %}
+            <p id="img-copy"></p>
+            <div class="col-md-4 img-holder">
+                <div class="image-details">
+                    <p class="text-center"><a data-toggle="modal" data-target="#{{img.id}}">{{img.name}}</a></p>
+                </div>
+                <img src="{{img.photos_image.url}}" alt="{{img.name}}">
+            </div>
+        {% empty %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/static/img/error.jpeg" alt="Loading Image">
+                </div>
+                <div class="col-md-6">
+                    <h4>Awww...Don’t Cry.</h4>
+                    <p>Images are coming up soon</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
