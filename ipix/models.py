@@ -1,4 +1,7 @@
+import datetime as dt
+
 from django.db import models
+
 
 # Create your models here.
 class Location(models.Model):
@@ -45,3 +48,32 @@ class Category(models.Model):
         return self.photo_category
 
 
+class Image(models.Model):
+    photos_image = models.ImageField(upload_to = 'photos/')
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    post_date = models.DateTimeField(auto_now_add=True)
+    location = models.ForeignKey(Location)
+    category = models.ManyToManyField(Category)
+
+   
+    def save_image(self):
+        self.save()
+    
+    def delete_image(self):
+        self.delete()
+    
+    def __str__(self):
+        return self.name
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        images= cls.objects.get(pk = id)
+        return images
+
+    @classmethod
+    def search_image(cls,search_category):
+        images_category = Image.objects.filter(category__photo_category__icontains=search_category)
+        return images_category
+
+    
