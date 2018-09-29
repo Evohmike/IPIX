@@ -1,4 +1,4 @@
-# [IPIX](https://ipix.herokuapp.com)
+# [IPIX](https://ipix.herokuapp.com/)
 ### Simple watch gallery web application that showcase different types of watches,their origin and designs 
 ### September 28th, 2018
 #### By **[Evoh Mike](https://github.com/Evohmike)**
