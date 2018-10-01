@@ -29,4 +29,29 @@
 </div>
 
 
+{% for img in images %}
+<div class="modal fade bd-example-modal-lg" id="{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 modal-image">
+                            <a href="/image/{{img.category.photo_category}}/{{img.id}}">
+                                <img src="{{img.photos_image.url}}" alt="{{img.name}}">
+                            </a>
+                        </div>
+                        <div class="col-md-12 modal-text">
+                            <h5 class="modal-title" id="modal-title"> {{img.name}} </h5>
+                            <hr>
+                            <p>{{img.description}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endfor %}
+
+
 {% endblock %}

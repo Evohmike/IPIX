@@ -99,3 +99,12 @@
   font-size: 20px;
 }
 
+
+
+
+
+
+
+.btn-outline-danger:hover i {
+  color: rgb(141, 11, 11);
+}

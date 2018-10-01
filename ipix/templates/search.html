@@ -28,5 +28,33 @@
     </div>
 </div>
 
-
+{% for img in images %}
+<div class="modal fade bd-example-modal-lg" id="{{img.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 modal-image">
+                            <a href="/image/{{img.category.photo_category}}/{{img.id}}"></a>
+                                <img src="{{img.photos_image.url}}" alt="{{img.name}}">
+                            </a>
+                        </div>
+                        <div class="col-md-12 modal-text">
+                            <h5 class="modal-title" id="modal-title"> {{img.name}} </h5>
+                            <hr>
+                            <p>{{img.description}}</p>
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <input class="form-control" type="text" value="https://ipix.herokuapp.com/{{image.photo.url}}" id="thislinkhere-{{image.id}}">
+                          <br>
+                          <a onclick="copyLink({{image.id}})"><button class="btn btn-info btn-md">Copy image Link</button></a>
+                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endfor %}
 {% endblock %}
