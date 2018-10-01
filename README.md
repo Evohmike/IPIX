@@ -1,5 +1,5 @@
 # [IPIX](https://ipix.herokuapp.com/)
-### Simple watch gallery web application that showcase different types of watches,their origin and designs 
+### Simple watch gallery web application that showcase different types of watches,their location of origin and categories. 
 ### September 28th, 2018
 #### By **[Evoh Mike](https://github.com/Evohmike)**
 
@@ -64,7 +64,7 @@ python3.6 manage.py runserver
 Open terminal on `localhost:8000`
 
 ## Known bugs
-Copy functionality does not work
+No known bugs. If you find any please feel free to contact me.
 
 ## Technologies used
     - Python 3.6
