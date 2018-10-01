@@ -1,9 +1,8 @@
  {% extends 'base.html' %} 
- {%load static %}
-
+ {%load static %} 
  {% block content %} 
  {{block.super}}
- 
+
 <div class="container-fluid">
   <div class="row">
     {% for img in images %}
@@ -37,12 +36,12 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" modal-image">
-            
-              <img src="{{img.photos_image.url}}" alt="{{img.name}}" style="height:400px;width:100%;">
+          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" modal-image ">
+          
+            <img src="{{img.photos_image.url}} " alt="{{img.name}} " style="height:400px;width:100%; ">
            
           </div>
-          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12" modal-text">
+          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 " modal-text">
             <h5 class="modal-title" id="modal-title"> {{img.name}} </h5>
             <hr>
             <p>{{img.description}}</p>
@@ -51,15 +50,28 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <input class="form-control" type="text" value="https://ipix.herokuapp.com/{{image.photo.url}}" id="thislinkhere-{{image.id}}">
+            <input class="form-control" type="text" value="https://ipix.herokuapp.com{{img.photos_image.url}}" id="thislinkhere-{{img.id}}">
             <br>
-            <a onclick="copyLink({{image.id}})"><button class="btn btn-info btn-md">Copy image Link</button></a>
-     
+            <a onclick="copyLink({{img.id}})"><button class="btn btn-info btn-md">Copy image Link</button></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-{% endfor %} 
-{% endblock %}
+{% endfor %}
+<script>
+  function copyLink(id) {
+    /* Get the text field */
+    var copyText = document.getElementById("thislinkhere-" + id);
+
+    /* Select the text field */
+    copyText.select();
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the link: " + copyText.value);
+  }
+</script> {% endblock %}
